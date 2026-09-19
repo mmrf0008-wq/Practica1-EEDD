@@ -11,7 +11,7 @@ class VDinamico {
 
 	T *v;
 	long int tamlog;
-	long int tam;
+	long int tamfis;
 
 public:
 
