@@ -44,6 +44,9 @@ const string RUTA_FICHERO_ESPECIES = "data/arbolado-especies.csv";
 
 int main()
 {
+
+
+/*
     try
     {
         string ruta = obtenerDirectorioActual();
@@ -77,6 +80,7 @@ int main()
         //Ordenación del vector
         cout<<"==================================================="<<endl;
         vectorCompleto.ordenar();
+
         cout << "Vector ordenado. Mostrar las primeras 50 especies" << endl;
         for (int i = 0; i < 50; i++)
         {
@@ -117,5 +121,5 @@ int main()
         cerr << endl << "main.cpp -> " << e.what() << endl;
         return 1;
     }
-    return 0;
+    return 0;*/
 }

@@ -1,10 +1,10 @@
-//
-// Created by Maitena on 19/9/2026.
-//
 
 #ifndef VDINAMICO_H
 #define VDINAMICO_H
 #include <cmath>
+#include <stdexcept>
+#include <climits>
+using namespace std;
 
 template<class T>
 class VDinamico {
@@ -52,7 +52,7 @@ public:
 	* @param arr vector al que se le realizará la "copia"
 	* @return objeto this, el objeto copia
 	*/
-	VDinamico& operator=(const VDinamico &arr);
+	VDinamico<T>& operator=(const VDinamico &arr);
 
 	/**
 	 * @brief operador []
@@ -60,7 +60,7 @@ public:
 	* @return objeto en posicion i
 	* @pre valor i debe ser intervalo [0-tamLog]
 	*/
-	VDinamico& operator[](const int &i);
+	VDinamico<T>& operator[](const int &i);
 
 	/**
 	* @brief inserta un dato en la posicion establecida en parametro
@@ -91,14 +91,14 @@ public:
 	* @param arr elemento con el que se realiza la comparativa
 	* @return elemento menor entre ambos
 	*/
-	VDinamico& operator<(VDinamico &arr);
+	VDinamico<T>& operator<(VDinamico<T> &arr);
 
 	/**
 	 * @brief operador == . Verifica si ambos elementos son iguales
 	* @param arr elemento con el que se realiza la comparativa
 	* @return true si ambos objetos (this y arr) son iguales . False si no lo son
 	*/
-	bool operator==(VDinamico &arr);
+	bool operator==(VDinamico<T> &arr);
 
 	/**
 	 * @brief realiza la busqueda discotomica en el vector
@@ -176,6 +176,21 @@ VDinamico<T> & VDinamico<T>::operator=(const VDinamico &arr) {
 	}
 
 	return *this;
+}
+
+
+template <typename T>
+VDinamico<T>& VDinamico<T>::operator[](const int &i){
+	if(i<0 || i > tamfis){
+		throw new invalid_argument("[operator[]]: se ha intentado acceder a una dirección no válida");
+	}
+	return v[i];
+}
+
+template <typename T>
+void VDinamico<T>::insertar(const T& dato,  unsigned int pos ){
+
+
 }
 
 
