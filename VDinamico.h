@@ -4,7 +4,7 @@
 
 #ifndef VDINAMICO_H
 #define VDINAMICO_H
-
+#include <cmath>
 
 template<class T>
 class VDinamico {
@@ -44,12 +44,15 @@ public:
 	*/
 	VDinamico<T>(const VDinamico<T>& origen, const  unsigned int &posicionInicial, const unsigned int &numElementos);
 
+	bool esPotenciaDeDos(int num);
+	int potenciaDeDos(int num);
+
 	/**
 	* @brief operador asignación
 	* @param arr vector al que se le realizará la "copia"
 	* @return objeto this, el objeto copia
 	*/
-	VDinamico& operator=(VDinamico &arr);
+	VDinamico& operator=(const VDinamico &arr);
 
 	/**
 	 * @brief operador []
@@ -116,6 +119,64 @@ public:
 	~VDinamico();
 };
 
+template<typename T>
+VDinamico<T>::VDinamico():tamfis(1),tamlog(0) {
+	v = new T[tamfis];
+}
+
+template<typename T>
+VDinamico<T>::VDinamico(unsigned int tamLog, T &dato) {
+	tamfis=potenciaDeDos(tamLog);
+
+	v = new T[tamfis];
+	for (int i=0;i<tamLog;i++) {
+		v[i]=dato;
+	}
+}
+
+template<typename T>
+bool VDinamico<T>::esPotenciaDeDos(int num) {
+	if (num%2!=0) {
+		return false;
+	} else {
+		int aux=2;
+		for (int i=1;i<num;i++) {
+			aux=pow(aux,i);
+			if (aux==num) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
+template<typename T>
+int VDinamico<T>::potenciaDeDos(int num) {
+	int aux=2;
+	int i=1;
+	while (aux>=num) {
+		pow(aux,i);
+		i++;
+	}
+	return aux;
+}
+
+template<typename T>				//vector=arr
+VDinamico<T> & VDinamico<T>::operator=(const VDinamico &arr) {
+	if (this != &arr) {
+		delete [] v;					//Forma de eliminar un vector dinamico
+
+		tamfis=arr.tamfis;
+		tamlog=arr.tamlog;
+		v = new T[tamfis];
+
+		for (int i=0;i<tamlog;i++) {
+			v[i]=arr.v[i];
+		}
+	}
+
+	return *this;
+}
 
 
 #endif //VDINAMICO_H
