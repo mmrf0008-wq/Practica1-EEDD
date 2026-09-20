@@ -4,6 +4,8 @@
 #include <cmath>
 #include <stdexcept>
 #include <climits>
+#include <algorithm>
+
 using namespace std;
 
 template<class T>
@@ -87,21 +89,8 @@ public:
 	void ordenar();
 
 	/**
-	 * @brief operador <
-	* @param arr elemento con el que se realiza la comparativa
-	* @return elemento menor entre ambos
-	*/
-	VDinamico<T>& operator<(VDinamico<T> &arr);
-
-	/**
-	 * @brief operador == . Verifica si ambos elementos son iguales
-	* @param arr elemento con el que se realiza la comparativa
-	* @return true si ambos objetos (this y arr) son iguales . False si no lo son
-	*/
-	bool operator==(VDinamico<T> &arr);
-
-	/**
 	 * @brief realiza la busqueda discotomica en el vector
+	* @pre Se asume que el vector esta ordenado
 	* @param dato dato a buscar dentro del vector
 	* @return posicion donde se encuentra el dato
 	*/
@@ -111,7 +100,7 @@ public:
 	 *
 	* @return devuelve el tamaño lógico del vector
 	*/
-	unsigned int gettLogico();
+	unsigned int getLogico() const;
 
 	/**
 	* @brief destructor del objeto
@@ -134,6 +123,32 @@ VDinamico<T>::VDinamico(unsigned int tamLog, T &dato) {
 	}
 }
 
+template <typename T>
+VDinamico<T>::VDinamico(const VDinamico<T>& origen):
+	tamfis(origen.tamfis),tamlog(origen.tamlog)
+{
+	v = new T[tamfis];
+	for (int i=0;i<tamlog;i++) {
+		v[i]=origen.v[i];
+	}
+}
+
+template<typename T>
+VDinamico<T>::VDinamico(const VDinamico<T> &origen, const unsigned int &posicionInicial, const unsigned int &numElementos)
+{
+	if (posicionInicial+numElementos>origen.tamlog) {
+		throw out_of_range("[VDinamico::VDinamico]: El numero de elementos supera el rango del vector.");
+	}
+	tamlog = numElementos;
+	tamfis = potenciaDeDos(tamlog);
+	v = new T[tamfis];
+
+	for(int i=0;i<tamlog;i++) {
+		v[i]=origen.v[i+posicionInicial];
+	}
+}
+
+
 template<typename T>
 bool VDinamico<T>::esPotenciaDeDos(int num) {
 	if (num%2!=0) {
@@ -154,7 +169,7 @@ template<typename T>
 int VDinamico<T>::potenciaDeDos(int num) {
 	int aux=2;
 	int i=1;
-	while (aux>=num) {
+	while (aux>num) {
 		pow(aux,i);
 		i++;
 	}
@@ -187,11 +202,82 @@ VDinamico<T>& VDinamico<T>::operator[](const int &i){
 	return v[i];
 }
 
-template <typename T>
-void VDinamico<T>::insertar(const T& dato,  unsigned int pos ){
-
-
+template<typename T>
+void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
+	if (pos > tamfis) {
+		throw out_of_range("[VDinamico<T>::insertar]: La posicion dada no existe en el vector.");
+	}
+	if (tamfis==tamlog) {
+		tamfis=potenciaDeDos(tamfis);
+	}
+	if (pos==UINT_MAX) {					//Insercion al final del vector
+		v[tamlog]=dato;
+		tamlog++;
+	} else {								//Insercion en la posicion dada
+		for (int i=tamlog-1;i>=pos;i--) {
+			v[i+1]=v[i];
+		}
+		v[pos]=dato;
+		tamlog++;
+	}
 }
+
+template<typename T>
+T VDinamico<T>::borrar(unsigned int pos) {
+	if (pos > tamfis) {
+		throw out_of_range("[VDinamico<T>::borrar]: La posicion dada no existe en el vector.");
+	}
+
+	if (pos == UINT_MAX) {				//Eliminar el ultimo dato del vector
+		v[tamlog-1]=v[tamlog];
+		tamlog--;
+	} else {
+		for (int i=pos;i<tamlog;i++) {	//Eliminar la posicion dada del vector
+			v[i]=v[i+1];
+		}
+		tamlog--;
+	}
+
+	if (tamlog*3<tamfis) {				//Condicion para reducir el tamaño fisico del vector
+		tamfis=tamfis/2;
+	}
+}
+
+template<typename T>			//DEFINIR OBLIGATORIAMENTE LOS OPERADORES == Y < EN LA CLASE ESPECIE
+void VDinamico<T>::ordenar() {	//NO HAY QUE HACERLOS EN ESTA CLASE
+	sort(v,v + tamlog);
+}
+
+template<typename T>
+int VDinamico<T>::busquedaDicotomica(const T &dato) {
+	int inf = 0;
+	int sup = tamlog-1;
+	int aux;
+	while (inf <= sup) {
+		aux = (inf+sup)/2;
+		if (v[aux]==dato) {
+			return aux;
+		} else if (v[aux]<dato) {
+			inf = aux + 1;			//Se le suma uno pq la posicion aux ya esta comprobada, parte desde la siguiente
+		} else {
+			sup = aux - 1;			//Lo mismo que antes, pero al ser el limite de arriba, parte desde la posicion anterior
+		}
+	}
+	return -1;					//Sirve para indicar que el elemento dado no existe dentro del vector
+}
+
+template<typename T>
+unsigned int VDinamico<T>::getLogico() const {
+	return tamlog;
+}
+
+template<typename T>
+VDinamico<T>::~VDinamico() {
+	delete [] v;
+	v = nullptr;
+}
+
+
 
 
 #endif //VDINAMICO_H
