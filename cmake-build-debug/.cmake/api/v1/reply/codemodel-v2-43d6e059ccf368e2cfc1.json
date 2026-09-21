@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Practica1_EEDD::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Practica1_EEDD-Debug-0774aff436ac0b417a35.json",
+					"jsonFile" : "target-Practica1_EEDD-Debug-a1b7d98d3d5dc4d09841.json",
 					"name" : "Practica1_EEDD",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/almar/OneDrive/Desktop/ARCHIVOS_UJA/SEGUNDO/Primer_Cuatrimestre/EEDD/Practicas/Practica1-EEDD/cmake-build-debug",
-		"source" : "C:/Users/almar/OneDrive/Desktop/ARCHIVOS_UJA/SEGUNDO/Primer_Cuatrimestre/EEDD/Practicas/Practica1-EEDD"
+		"build" : "C:/Users/Maitena/Desktop/Apuntes/2\u00ba/EEDD/Practica1-EEDD/cmake-build-debug",
+		"source" : "C:/Users/Maitena/Desktop/Apuntes/2\u00ba/EEDD/Practica1-EEDD"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 8
+		"minor" : 7
 	}
 }

@@ -12,8 +12,8 @@ template<class T>
 class VDinamico {
 
 	T *v;
-	long int tamlog;
-	long int tamfis;
+	unsigned long  int tamlog;
+	unsigned long int tamfis;
 
 public:
 
@@ -106,6 +106,10 @@ public:
 	* @brief destructor del objeto
 	*/
 	~VDinamico();
+
+
+private:
+	void disminuirTam();
 };
 
 template<typename T>
@@ -115,6 +119,11 @@ VDinamico<T>::VDinamico():tamfis(1),tamlog(0) {
 
 template<typename T>
 VDinamico<T>::VDinamico(unsigned int tamLog, T &dato) {
+
+	if(tamLog == 0 ) {
+		throw std::out_of_range("[VDinamico] tamaño logico no válido");
+	}
+	this->tamlog= tamLog;
 	tamfis=potenciaDeDos(tamLog);
 
 	v = new T[tamfis];
@@ -124,9 +133,11 @@ VDinamico<T>::VDinamico(unsigned int tamLog, T &dato) {
 }
 
 template <typename T>
-VDinamico<T>::VDinamico(const VDinamico<T>& origen):
-	tamfis(origen.tamfis),tamlog(origen.tamlog)
+VDinamico<T>::VDinamico(const VDinamico<T>& origen)
 {
+	this->tamlog= origen.tamlog;
+	this->tamfis = origen.tamfis;
+
 	v = new T[tamfis];
 	for (int i=0;i<tamlog;i++) {
 		v[i]=origen.v[i];
@@ -136,7 +147,7 @@ VDinamico<T>::VDinamico(const VDinamico<T>& origen):
 template<typename T>
 VDinamico<T>::VDinamico(const VDinamico<T> &origen, const unsigned int &posicionInicial, const unsigned int &numElementos)
 {
-	if (posicionInicial+numElementos>origen.tamlog) {
+	if (posicionInicial+numElementos>=origen.tamlog) {
 		throw out_of_range("[VDinamico::VDinamico]: El numero de elementos supera el rango del vector.");
 	}
 	tamlog = numElementos;
@@ -153,24 +164,23 @@ template<typename T>
 bool VDinamico<T>::esPotenciaDeDos(int num) {
 	if (num%2!=0) {
 		return false;
-	} else {
-		int aux=2;
-		for (int i=1;i<num;i++) {
-			aux=pow(aux,i);
-			if (aux==num) {
-				return true;
-			}
-		}
-		return false;
 	}
+	int aux=2;
+	for (int i=1;i<num;i++) {
+		aux=pow(aux,i);
+		if (aux==num) {
+			return true;
+		}
+	}
+	return false;
 }
 
 template<typename T>
 int VDinamico<T>::potenciaDeDos(int num) {
 	int aux=2;
 	int i=1;
-	while (aux>num) {
-		pow(aux,i);
+	while (aux>=num) {
+		aux = pow(aux,i);
 		i++;
 	}
 	return aux;
@@ -178,26 +188,26 @@ int VDinamico<T>::potenciaDeDos(int num) {
 
 template<typename T>				//vector=arr
 VDinamico<T> & VDinamico<T>::operator=(const VDinamico &arr) {
-	if (this != &arr) {
+	if (this != &arr) { //la dirección de memoria debe ser distinta
 		delete [] v;					//Forma de eliminar un vector dinamico
 
 		tamfis=arr.tamfis;
 		tamlog=arr.tamlog;
-		v = new T[tamfis];
+		v = new T[tamfis]; //creamos el nuevo vector
 
-		for (int i=0;i<tamlog;i++) {
+		for (int i=0;i<tamlog;i++) { //copiamos los valores
 			v[i]=arr.v[i];
 		}
 	}
 
-	return *this;
+	return *this; //devolvemos la referencia del objeto
 }
 
 
 template <typename T>
 VDinamico<T>& VDinamico<T>::operator[](const int &i){
-	if(i<0 || i > tamfis){
-		throw new invalid_argument("[operator[]]: se ha intentado acceder a una dirección no válida");
+	if( (i<0) || (i > tamfis) ){
+		throw  invalid_argument("[operator[]]: se ha intentado acceder a una dirección no válida");
 	}
 	return v[i];
 }
@@ -221,26 +231,40 @@ void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
 		tamlog++;
 	}
 }
+template<class T>
+void VDinamico<T>::disminuirTam() {
+	this->tamfis= this->tamfis/2;
+	T *nuevo= new T[this->tamfis];
+	for(int i=0; i < this->tamlog; i++) {
+		nuevo[i] = this->v[i];
+	}
+	delete [] this->v;
+	this->v = nuevo;
+}
 
 template<typename T>
 T VDinamico<T>::borrar(unsigned int pos) {
 	if (pos > tamfis) {
 		throw out_of_range("[VDinamico<T>::borrar]: La posicion dada no existe en el vector.");
 	}
-
+	T eliminado;
 	if (pos == UINT_MAX) {				//Eliminar el ultimo dato del vector
+		eliminado = v[this->tamlog-1];
 		v[tamlog-1]=v[tamlog];
 		tamlog--;
 	} else {
-		for (int i=pos;i<tamlog;i++) {	//Eliminar la posicion dada del vector
+		eliminado = v[pos];
+		for (unsigned int i=pos;i<tamlog;i++) {	//Eliminar la posicion dada del vector
 			v[i]=v[i+1];
 		}
 		tamlog--;
 	}
-
-	if (tamlog*3<tamfis) {				//Condicion para reducir el tamaño fisico del vector
-		tamfis=tamfis/2;
+	if(this->tamlog *3 < this->tamfis) { //si el vector sufre muchos borrados se debe disminuir el tamaño
+		disminuirTam();
 	}
+
+
+	return eliminado; //se devuelve el elemento eliminado
 }
 
 template<typename T>			//DEFINIR OBLIGATORIAMENTE LOS OPERADORES == Y < EN LA CLASE ESPECIE
@@ -250,8 +274,8 @@ void VDinamico<T>::ordenar() {	//NO HAY QUE HACERLOS EN ESTA CLASE
 
 template<typename T>
 int VDinamico<T>::busquedaDicotomica(const T &dato) {
-	int inf = 0;
-	int sup = tamlog-1;
+	int inf = 0;   //margen inferior
+	int sup = tamlog-1; // margen superior
 	int aux;
 	while (inf <= sup) {
 		aux = (inf+sup)/2;
@@ -273,6 +297,8 @@ unsigned int VDinamico<T>::getLogico() const {
 
 template<typename T>
 VDinamico<T>::~VDinamico() {
+	this->tamfis =0;
+	this->tamlog=0;
 	delete [] v;
 	v = nullptr;
 }

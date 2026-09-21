@@ -52,7 +52,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/almar/OneDrive/Desktop/ARCHIVOS_UJA/SEGUNDO/Primer_Cuatrimestre/EEDD/Practicas/Practica1-EEDD/."
+					"path" : "C:/Users/Maitena/Desktop/Apuntes/2\u00ba/EEDD/Practica1-EEDD/."
 				}
 			],
 			"language" : "CXX",
@@ -79,6 +79,10 @@
 		[
 			{
 				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
 				"role" : "flags"
 			},
 			{
