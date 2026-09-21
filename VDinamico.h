@@ -214,9 +214,7 @@ VDinamico<T>& VDinamico<T>::operator[](const int &i){
 
 template<typename T>
 void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
-	if (pos > tamfis) {
-		throw out_of_range("[VDinamico<T>::insertar]: La posicion dada no existe en el vector.");
-	}
+
 	if (tamfis==tamlog) {
 		tamfis=potenciaDeDos(tamfis);
 	}

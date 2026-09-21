@@ -46,7 +46,7 @@ int main()
 {
 
 
-/*
+
     try
     {
         string ruta = obtenerDirectorioActual();
@@ -110,8 +110,8 @@ int main()
         cout<<"==================================================="<<endl;
         cout << "Nombre comun no nulo" << endl;
         VDinamico<Especie*> vectorEspNComun = getEspNComun(vectorCompleto);
-        cout<<"Numero de elemntos no nulos: "<<vectorEspNComun.gettLogico()<<endl;
-        for (int i = 0; i < vectorEspNComun.gettLogico(); i++)
+        cout<<"Numero de elemntos no nulos: "<<vectorEspNComun.getLogico()<<endl;
+        for (int i = 0; i < vectorEspNComun.getLogico(); i++)
         {
             vectorEspNComun[i]->mostrarInfo();
         }
@@ -121,5 +121,5 @@ int main()
         cerr << endl << "main.cpp -> " << e.what() << endl;
         return 1;
     }
-    return 0;*/
+    return 0;
 }

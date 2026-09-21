@@ -16,6 +16,7 @@ private:
 	string tipoPlanta;
 
 public:
+
 	string codigo_especie() const;
 	void set_codigo_especie(const string &codigo_especie);
 
@@ -30,6 +31,9 @@ public:
 
 	bool operator==(const Especie &arr);
 	bool operator<(const Especie &arr);
+
+
+
 };
 
 
