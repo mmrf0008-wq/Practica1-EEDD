@@ -136,9 +136,13 @@ VDinamico<T>::VDinamico(const VDinamico<T>& origen):
 template<typename T>
 VDinamico<T>::VDinamico(const VDinamico<T> &origen, const unsigned int &posicionInicial, const unsigned int &numElementos)
 {
+	if (posicionInicial>origen.tamlog) {
+		throw out_of_range("[VDinamico::VDinamico]: La posicion inicial dada se sale del tamanio logico del vector.");
+	}
 	if (posicionInicial+numElementos>origen.tamlog) {
 		throw out_of_range("[VDinamico::VDinamico]: El numero de elementos supera el rango del vector.");
 	}
+
 	tamlog = numElementos;
 	tamfis = potenciaDeDos(tamlog);
 	v = new T[tamfis];

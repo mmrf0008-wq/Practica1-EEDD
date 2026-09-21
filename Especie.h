@@ -29,7 +29,7 @@ public:
 	void set_tipo_planta(const string &tipo_planta);
 
 	bool operator==(const Especie &arr);
-	bool operator>(const Especie &arr);
+	bool operator<(const Especie &arr);
 };
 
 
