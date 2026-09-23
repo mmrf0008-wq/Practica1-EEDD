@@ -18,9 +18,6 @@ string Especie::get_codigo_especie() const { return this->codigoEspecie; }
  * @param codigo_especie
  */
 void Especie::set_codigo_especie(const string &codigo_especie) {
-     /* if(codigoEspecie.length() < 2) {
-           throw invalid_argument("[Especie::set_codigo_especie]: codigo no valido");
-      }*/
       this->codigoEspecie = codigo_especie;
 }
 

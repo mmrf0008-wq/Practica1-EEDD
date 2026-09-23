@@ -253,6 +253,10 @@ T VDinamico<T>::borrar(unsigned int pos) {
 		throw out_of_range("[VDinamico<T>::borrar]: La posicion dada no existe en el vector.");
 	}
 	T eliminado;
+	if(this->tamlog *3 < this->tamfis) { //si el vector sufre muchos borrados se debe disminuir el tamaño
+		disminuirTam();
+	}
+
 	if (pos == UINT_MAX) {				//Eliminar el ultimo dato del vector
 		eliminado = v[this->tamlog-1];
 		v[tamlog-1]=v[tamlog];
@@ -264,10 +268,6 @@ T VDinamico<T>::borrar(unsigned int pos) {
 		}
 		tamlog--;
 	}
-	if(this->tamlog *3 < this->tamfis) { //si el vector sufre muchos borrados se debe disminuir el tamaño
-		disminuirTam();
-	}
-
 
 	return eliminado; //se devuelve el elemento eliminado
 }
