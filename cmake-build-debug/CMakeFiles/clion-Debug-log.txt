@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD -B C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug
--- Configuring done (0.2s)
+"C:\Program Files\JetBrains\CLion 2025.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\almar\OneDrive\Desktop\ARCHIVOS_UJA\SEGUNDO\Primer_Cuatrimestre\EEDD\Practicas\Practica1-EEDD -B C:\Users\almar\OneDrive\Desktop\ARCHIVOS_UJA\SEGUNDO\Primer_Cuatrimestre\EEDD\Practicas\Practica1-EEDD\cmake-build-debug
+-- Configuring done (0.3s)
 -- Generating done (0.0s)
--- Build files have been written to: C:/Users/Maitena/Desktop/Apuntes/2/EEDD/Practica1-EEDD/cmake-build-debug
+-- Build files have been written to: C:/Users/almar/OneDrive/Desktop/ARCHIVOS_UJA/SEGUNDO/Primer_Cuatrimestre/EEDD/Practicas/Practica1-EEDD/cmake-build-debug

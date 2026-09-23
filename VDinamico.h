@@ -249,7 +249,7 @@ void VDinamico<T>::disminuirTam() {
 
 template<typename T>
 T VDinamico<T>::borrar(unsigned int pos) {
-	if (pos > tamfis) {
+	if (pos > tamfis && pos != UINT_MAX) {
 		throw out_of_range("[VDinamico<T>::borrar]: La posicion dada no existe en el vector.");
 	}
 	T eliminado;
@@ -292,7 +292,7 @@ int VDinamico<T>::busquedaDicotomica(const T &dato) {
 			sup = aux - 1;			//Lo mismo que antes, pero al ser el limite de arriba, parte desde la posicion anterior
 		}
 	}
-	return -1;					//Sirve para indicar que el elemento dado no existe dentro del vector
+	return -1;						//Sirve para indicar que el elemento dado no existe dentro del vector
 }
 
 template<typename T>
