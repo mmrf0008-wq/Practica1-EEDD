@@ -222,6 +222,9 @@ void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
 		tamfis=potenciaDeDos(tamfis);
 		aumentarTam();
 	}
+	if( pos > tamfis && pos != UINT_MAX) {
+		throw invalid_argument("[insertar] posicion no valida");
+	}
 	if (pos==UINT_MAX) {					//Insercion al final del vector
 		v[tamlog]=dato;
 		tamlog++;
@@ -269,8 +272,8 @@ T VDinamico<T>::borrar(unsigned int pos) {
 	return eliminado; //se devuelve el elemento eliminado
 }
 
-template<typename T>			//DEFINIR OBLIGATORIAMENTE LOS OPERADORES == Y < EN LA CLASE ESPECIE
-void VDinamico<T>::ordenar() {	//NO HAY QUE HACERLOS EN ESTA CLASE
+template<typename T>
+void VDinamico<T>::ordenar() {
 	sort(v,v + tamlog);
 }
 

@@ -108,7 +108,7 @@ bool Especie::operator<(const Especie &arr) {
  */
 Especie::Especie(const string &cod, const string &nombreComun, const string &nombreCientifico,
 				 const string &tipoPlanta) {
-cout << " cod " << cod << " nci " << nombreCientifico << " nco " << nombreComun << " tp " << tipoPlanta << endl;
+
            if(cod.length()< 2) {
            throw invalid_argument("[Especie:Especie()]: codigo no válido "  );
           }
