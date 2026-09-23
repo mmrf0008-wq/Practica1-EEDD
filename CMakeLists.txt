@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(Practica1_EEDD
-    LectorCSV.cpp
-    LectorCSV.h
-    main.cpp
+        main.cpp
         Especie.cpp
+        Especie.h
         VDinamico.h
+        LectorCSV.cpp
 )

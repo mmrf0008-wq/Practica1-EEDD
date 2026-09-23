@@ -4,8 +4,9 @@
 #include <cmath>
 #include <stdexcept>
 #include <climits>
-#include <algorithm>
 
+#include <algorithm>
+#include "iostream"
 using namespace std;
 
 template<class T>
@@ -62,7 +63,7 @@ public:
 	* @return objeto en posicion i
 	* @pre valor i debe ser intervalo [0-tamLog]
 	*/
-	VDinamico<T>& operator[](const int &i);
+	T& operator[](const int &i);
 
 	/**
 	* @brief inserta un dato en la posicion establecida en parametro
@@ -106,6 +107,8 @@ public:
 	* @brief destructor del objeto
 	*/
 	~VDinamico();
+
+	void aumentarTam();
 
 
 private:
@@ -162,28 +165,28 @@ VDinamico<T>::VDinamico(const VDinamico<T> &origen, const unsigned int &posicion
 
 template<typename T>
 bool VDinamico<T>::esPotenciaDeDos(int num) {
-	if (num%2!=0) {
+	if(num%2!=0){
 		return false;
 	}
-	int aux=2;
-	for (int i=1;i<num;i++) {
-		aux=pow(aux,i);
-		if (aux==num) {
+	int a=1;
+	for(int i=0;i<num/2;i++) {
+		a=a*2;
+		if(a==num) {
 			return true;
 		}
+		if(a>num) {
+			return false;
+		}
 	}
-	return false;
 }
 
 template<typename T>
 int VDinamico<T>::potenciaDeDos(int num) {
-	int aux=2;
-	int i=1;
-	while (aux>=num) {
-		aux = pow(aux,i);
-		i++;
+	int pot=num+1;
+	while(!esPotenciaDeDos(pot)){
+		pot++;
 	}
-	return aux;
+	return pot;
 }
 
 template<typename T>				//vector=arr
@@ -205,7 +208,7 @@ VDinamico<T> & VDinamico<T>::operator=(const VDinamico &arr) {
 
 
 template <typename T>
-VDinamico<T>& VDinamico<T>::operator[](const int &i){
+T& VDinamico<T>::operator[](const int &i){
 	if( (i<0) || (i > tamfis) ){
 		throw  invalid_argument("[operator[]]: se ha intentado acceder a una dirección no válida");
 	}
@@ -217,6 +220,7 @@ void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
 
 	if (tamfis==tamlog) {
 		tamfis=potenciaDeDos(tamfis);
+		aumentarTam();
 	}
 	if (pos==UINT_MAX) {					//Insercion al final del vector
 		v[tamlog]=dato;
@@ -229,7 +233,7 @@ void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
 		tamlog++;
 	}
 }
-template<class T>
+template<typename T>
 void VDinamico<T>::disminuirTam() {
 	this->tamfis= this->tamfis/2;
 	T *nuevo= new T[this->tamfis];
@@ -301,7 +305,18 @@ VDinamico<T>::~VDinamico() {
 	v = nullptr;
 }
 
+template<typename T>
+void VDinamico<T>::aumentarTam() {
 
+	T *nuevo = new T[this->tamfis];
+
+	for(int i =0; i < tamlog; i++) {
+		nuevo[i] = this->v[i];
+	}
+	delete [] v;
+
+	v = nuevo;
+}
 
 
 #endif //VDINAMICO_H

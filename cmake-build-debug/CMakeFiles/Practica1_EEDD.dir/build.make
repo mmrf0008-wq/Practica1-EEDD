@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD
+CMAKE_SOURCE_DIR = C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Practica1_EEDD.dir/depend.make
@@ -68,68 +68,68 @@ include CMakeFiles/Practica1_EEDD.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Practica1_EEDD.dir/flags.make
 
-CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: CMakeFiles/Practica1_EEDD.dir/flags.make
-CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: CMakeFiles/Practica1_EEDD.dir/includes_CXX.rsp
-CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: C:/Users/Maitena/Desktop/Apuntes/2º/EEDD/Practica1-EEDD/LectorCSV.cpp
-CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: CMakeFiles/Practica1_EEDD.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj -MF CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.obj.d -o CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.obj -c C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\LectorCSV.cpp
-
-CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\LectorCSV.cpp > CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.i
-
-CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\LectorCSV.cpp -o CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.s
-
 CMakeFiles/Practica1_EEDD.dir/main.cpp.obj: CMakeFiles/Practica1_EEDD.dir/flags.make
 CMakeFiles/Practica1_EEDD.dir/main.cpp.obj: CMakeFiles/Practica1_EEDD.dir/includes_CXX.rsp
-CMakeFiles/Practica1_EEDD.dir/main.cpp.obj: C:/Users/Maitena/Desktop/Apuntes/2º/EEDD/Practica1-EEDD/main.cpp
+CMakeFiles/Practica1_EEDD.dir/main.cpp.obj: C:/Users/Maitena/Desktop/Apuntes/2/EEDD/Practica1-EEDD/main.cpp
 CMakeFiles/Practica1_EEDD.dir/main.cpp.obj: CMakeFiles/Practica1_EEDD.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Practica1_EEDD.dir/main.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practica1_EEDD.dir/main.cpp.obj -MF CMakeFiles\Practica1_EEDD.dir\main.cpp.obj.d -o CMakeFiles\Practica1_EEDD.dir\main.cpp.obj -c C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Practica1_EEDD.dir/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practica1_EEDD.dir/main.cpp.obj -MF CMakeFiles\Practica1_EEDD.dir\main.cpp.obj.d -o CMakeFiles\Practica1_EEDD.dir\main.cpp.obj -c C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\main.cpp
 
 CMakeFiles/Practica1_EEDD.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Practica1_EEDD.dir/main.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\main.cpp > CMakeFiles\Practica1_EEDD.dir\main.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\main.cpp > CMakeFiles\Practica1_EEDD.dir\main.cpp.i
 
 CMakeFiles/Practica1_EEDD.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Practica1_EEDD.dir/main.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\main.cpp -o CMakeFiles\Practica1_EEDD.dir\main.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\main.cpp -o CMakeFiles\Practica1_EEDD.dir\main.cpp.s
 
 CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj: CMakeFiles/Practica1_EEDD.dir/flags.make
 CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj: CMakeFiles/Practica1_EEDD.dir/includes_CXX.rsp
-CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj: C:/Users/Maitena/Desktop/Apuntes/2º/EEDD/Practica1-EEDD/Especie.cpp
+CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj: C:/Users/Maitena/Desktop/Apuntes/2/EEDD/Practica1-EEDD/Especie.cpp
 CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj: CMakeFiles/Practica1_EEDD.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj -MF CMakeFiles\Practica1_EEDD.dir\Especie.cpp.obj.d -o CMakeFiles\Practica1_EEDD.dir\Especie.cpp.obj -c C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\Especie.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj -MF CMakeFiles\Practica1_EEDD.dir\Especie.cpp.obj.d -o CMakeFiles\Practica1_EEDD.dir\Especie.cpp.obj -c C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\Especie.cpp
 
 CMakeFiles/Practica1_EEDD.dir/Especie.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Practica1_EEDD.dir/Especie.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\Especie.cpp > CMakeFiles\Practica1_EEDD.dir\Especie.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\Especie.cpp > CMakeFiles\Practica1_EEDD.dir\Especie.cpp.i
 
 CMakeFiles/Practica1_EEDD.dir/Especie.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Practica1_EEDD.dir/Especie.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\Especie.cpp -o CMakeFiles\Practica1_EEDD.dir\Especie.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\Especie.cpp -o CMakeFiles\Practica1_EEDD.dir\Especie.cpp.s
+
+CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: CMakeFiles/Practica1_EEDD.dir/flags.make
+CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: CMakeFiles/Practica1_EEDD.dir/includes_CXX.rsp
+CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: C:/Users/Maitena/Desktop/Apuntes/2/EEDD/Practica1-EEDD/LectorCSV.cpp
+CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj: CMakeFiles/Practica1_EEDD.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj -MF CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.obj.d -o CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.obj -c C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\LectorCSV.cpp
+
+CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\LectorCSV.cpp > CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.i
+
+CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\LectorCSV.cpp -o CMakeFiles\Practica1_EEDD.dir\LectorCSV.cpp.s
 
 # Object files for target Practica1_EEDD
 Practica1_EEDD_OBJECTS = \
-"CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj" \
 "CMakeFiles/Practica1_EEDD.dir/main.cpp.obj" \
-"CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj"
+"CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj" \
+"CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj"
 
 # External object files for target Practica1_EEDD
 Practica1_EEDD_EXTERNAL_OBJECTS =
 
-Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj
 Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/main.cpp.obj
 Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/Especie.cpp.obj
+Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/LectorCSV.cpp.obj
 Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/build.make
 Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/linkLibs.rsp
 Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/objects1.rsp
 Practica1_EEDD.exe: CMakeFiles/Practica1_EEDD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Practica1_EEDD.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Practica1_EEDD.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Practica1_EEDD.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -141,6 +141,6 @@ CMakeFiles/Practica1_EEDD.dir/clean:
 .PHONY : CMakeFiles/Practica1_EEDD.dir/clean
 
 CMakeFiles/Practica1_EEDD.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug C:\Users\Maitena\Desktop\Apuntes\2º\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles\Practica1_EEDD.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug C:\Users\Maitena\Desktop\Apuntes\2\EEDD\Practica1-EEDD\cmake-build-debug\CMakeFiles\Practica1_EEDD.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Practica1_EEDD.dir/depend
 

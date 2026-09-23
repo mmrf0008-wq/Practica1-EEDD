@@ -1,6 +1,5 @@
 #include <fstream>
 #include <iostream>
-#include <sstream>
 
 #include "VDinamico.h"
 #include "Especie.h"
@@ -44,9 +43,6 @@ const string RUTA_FICHERO_ESPECIES = "data/arbolado-especies.csv";
 
 int main()
 {
-
-
-
     try
     {
         string ruta = obtenerDirectorioActual();
@@ -74,7 +70,7 @@ int main()
         cout << "Identificador de las primeras 50 especies" << endl;
         for (int i = 0; i < 50; ++i)
         {
-            cout<<to_string(i)<<": "<<vectorCompleto[i].getcodigoEspecie()<<endl;
+            cout<<to_string(i)<<": "<<vectorCompleto[i].get_codigo_especie()<<endl;
         }
 
         //Ordenación del vector

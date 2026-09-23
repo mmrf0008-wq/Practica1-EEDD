@@ -183,7 +183,7 @@ void LectorCSV::eliminarBOM(std::string& linea) {
  * @param especie Especie a mostrar.
  */
 void LectorCSV::mostrarEspecie(const Especie& especie) {
-    std::cout << " - [" << especie.getcodigoEspecie() << "] " << especie.getnombre_comun()
-              << " (" << especie.getnombre_cientifico() << ") - "
-              << especie.gettipo_planta() << "\n";
+    std::cout << " - [" << especie.get_codigo_especie() << "] " << especie.get_nombre_comun()
+              << " (" << especie.get_nombre_cientifico() << ") - "
+              << especie.get_tipo_planta() << "\n";
 }

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Maitena/Desktop/Apuntes/2º/EEDD/Practica1-EEDD
+# Install script for directory: C:/Users/Maitena/Desktop/Apuntes/2/EEDD/Practica1-EEDD
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Maitena/Desktop/Apuntes/2º/EEDD/Practica1-EEDD/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Maitena/Desktop/Apuntes/2/EEDD/Practica1-EEDD/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
