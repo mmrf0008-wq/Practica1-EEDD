@@ -44,6 +44,24 @@ VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
     return vectorEspNComun;
 }
 
+//Metodo Burbuja
+void metodoBurbuja(VDinamico<Especie> vEspecies) {
+    if (vEspecies.getLogico()<=1) {
+        throw length_error("[main.cpp::metodoBurbuja]: El vector no se puede ordenar");
+    }
+    Especie aux;
+    for (int i=0; i<vEspecies.getLogico() ;i++) {
+        for (int j=vEspecies.getLogico()-1; j>0; j--) {
+            if (vEspecies[i]<vEspecies[j]) {
+                aux=vEspecies[i];
+                vEspecies[i]=vEspecies[j];
+                vEspecies[j]=aux;
+            }
+        }
+    }
+}
+
+
 //CONSTANTES
 const string RUTA_FICHERO_ESPECIES = "data/arbolado-especies.csv";
 
@@ -118,6 +136,16 @@ int main()
             cout<<to_string(i);
             vectorEspNComun[i]->mostrarInfo();
         }
+
+        //Ordenamiento mediante el metodo Burbuja
+        metodoBurbuja(vectorCompleto);
+        cout << "Vector ordenado. Mostrando las primeras 50 especies en orden inverso" << endl;
+        for (int i = 0; i < 50; i++)
+        {
+            cout<<to_string(i);
+            vectorCompleto[i].mostrarInfo();
+        }
+
     }
     catch (const exception& e)
     {
