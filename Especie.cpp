@@ -75,13 +75,14 @@ bool Especie::operator==(const Especie &arr) {
         return true;
       }
       if(this->codigoEspecie == arr.codigoEspecie
-       && this->nombreComun == arr.nombreComun
+       /*&& this->nombreComun == arr.nombreComun
        && this->nombreCientifico == arr.nombreCientifico
-       && this->tipoPlanta == arr.tipoPlanta)
+       && this->tipoPlanta == arr.tipoPlanta*/)
        {
           return true;
-      }
-       return false;
+       } else {
+          return false;
+       }
 }
 
 /**

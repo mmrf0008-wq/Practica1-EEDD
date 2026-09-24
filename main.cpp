@@ -34,7 +34,13 @@ string obtenerDirectorioActual() {
 VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
 {
     VDinamico<Especie*> vectorEspNComun;
-    cout<<"getEspNComun() FUNCIÓN SIN IMPLEMENTAR"<<endl;
+
+    for (int i=0; i<vEspecies.getLogico();i++) {
+        if (vEspecies[i].get_nombre_comun() != "") {
+            vectorEspNComun.insertar(&vEspecies[i]);
+        }
+    }
+
     return vectorEspNComun;
 }
 
@@ -67,7 +73,7 @@ int main()
 
         //Mostrar los 50 primeros identificadores
         cout<<"==================================================="<<endl;
-        cout << "Identificador de las primeras 50 especies" << endl;
+        cout << "Identificador de las primeras 50 especies:" << endl;
         for (int i = 0; i < 50; ++i)
         {
             cout<<to_string(i)<<": "<<vectorCompleto[i].get_codigo_especie()<<endl;
@@ -101,14 +107,15 @@ int main()
         pos = vectorCompleto.busquedaDicotomica(Especie("JAX", "","",""));
         cout << "   Posicion de JAX: " << pos << endl;
 
-
         //Búsqueda de Nombre común no nulo
         cout<<"==================================================="<<endl;
-        cout << "Nombre comun no nulo" << endl;
+        cout << "Vector de especies con nombre comun no nulo" << endl;
         VDinamico<Especie*> vectorEspNComun = getEspNComun(vectorCompleto);
-        cout<<"Numero de elemntos no nulos: "<<vectorEspNComun.getLogico()<<endl;
-        for (int i = 0; i < vectorEspNComun.getLogico(); i++)
+        cout<<"Numero de elementos no nulos: "<<vectorEspNComun.getLogico()<<endl;
+        cout << "Mostrando las primeras 50 especies: " << endl;
+        for (int i = 0; i < 50; i++)
         {
+            cout<<to_string(i);
             vectorEspNComun[i]->mostrarInfo();
         }
     }
