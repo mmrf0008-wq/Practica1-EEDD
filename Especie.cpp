@@ -71,16 +71,13 @@ void Especie::set_tipo_planta(const string &tipo_planta) {
  * @return
  */
 bool Especie::operator==(const Especie &arr) {
-      if(this == &arr) { //son el mismo objeto
+      if(this == &arr) {                        //son el mismo objeto
         return true;
       }
-      if(this->codigoEspecie == arr.codigoEspecie
-       /*&& this->nombreComun == arr.nombreComun
-       && this->nombreCientifico == arr.nombreCientifico
-       && this->tipoPlanta == arr.tipoPlanta*/)
-       {
+      if(this->codigoEspecie == arr.codigoEspecie)
+      {
           return true;
-       } else {
+      } else {
           return false;
        }
 }
@@ -93,8 +90,9 @@ bool Especie::operator==(const Especie &arr) {
 bool Especie::operator<(const Especie &arr) {
       if(this->codigoEspecie < arr.codigoEspecie) {
             return true;
+      } else {
+          return false;
       }
-      return false;
 }
 
 /**

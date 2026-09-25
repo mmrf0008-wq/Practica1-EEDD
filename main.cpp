@@ -45,17 +45,19 @@ VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
 }
 
 //Metodo Burbuja
-void metodoBurbuja(VDinamico<Especie> vEspecies) {
-    if (vEspecies.getLogico()<=1) {
+void metodoBurbuja(VDinamico<Especie> &vEspecies) {
+    if (vEspecies.getLogico()<1) {
         throw length_error("[main.cpp::metodoBurbuja]: El vector no se puede ordenar");
     }
     Especie aux;
-    for (int i=0; i<vEspecies.getLogico() ;i++) {
-        for (int j=vEspecies.getLogico()-1; j>0; j--) {
-            if (vEspecies[i]<vEspecies[j]) {
-                aux=vEspecies[i];
-                vEspecies[i]=vEspecies[j];
-                vEspecies[j]=aux;
+    int n = vEspecies.getLogico();
+
+    for (int i=0; i<n-1;i++) {
+        for (int j=0; j < n - i - 1; j++) {
+            if (vEspecies[j + 1] < vEspecies[j]) {
+                aux = vEspecies[j];
+                vEspecies[j] = vEspecies[j + 1];
+                vEspecies[j + 1] = aux;
             }
         }
     }
@@ -99,6 +101,7 @@ int main()
 
         //Ordenación del vector
         cout<<"==================================================="<<endl;
+
         vectorCompleto.ordenar();
 
         cout << "Vector ordenado. Mostrar las primeras 50 especies" << endl;
@@ -140,7 +143,7 @@ int main()
         //Ordenamiento mediante el metodo Burbuja
         metodoBurbuja(vectorCompleto);
         cout << "Vector ordenado. Mostrando las primeras 50 especies en orden inverso" << endl;
-        for (int i = 0; i < 50; i++)
+        for (int i = vectorCompleto.getLogico() - 1; i > vectorCompleto.getLogico() - 50; i--)
         {
             cout<<to_string(i);
             vectorCompleto[i].mostrarInfo();
