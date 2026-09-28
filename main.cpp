@@ -51,7 +51,7 @@ VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
  * @return vector de punteros de las especies que cumplen la condicion
  */
 VDinamico<Especie*> buscaPalabraNC(const string &palabra,  VDinamico<Especie> &especies) {
-	if(palabra.length() > 2) {
+	if(palabra.length() < 1) {
 		throw invalid_argument("[buscaPalabraNC] palabra no válida");
 	}
 	VDinamico<Especie*> encontrados;
@@ -178,9 +178,16 @@ int main()
         }
 
         //PUNTO 7:
+    	VDinamico<Especie*> otroVectorEspecies;
+    	string nombre = "Jasminum";
     	cout<<"==================================================="<<endl;
-    	cout << 
-
+    	otroVectorEspecies = buscaPalabraNC(nombre,vectorCompleto);
+    	cout << "Especies con el nombre "<<nombre<<": "<<otroVectorEspecies.getLogico() << endl;;
+    	for (int i = 0; i < otroVectorEspecies.getLogico(); i++)
+    	{
+    		cout<<to_string(i);
+    		otroVectorEspecies[i]->mostrarInfo();
+    	}
     }
     catch (const exception& e)
     {

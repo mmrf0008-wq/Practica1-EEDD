@@ -218,12 +218,12 @@ T& VDinamico<T>::operator[](const int &i){
 template<typename T>
 void VDinamico<T>::insertar(const T &dato, unsigned int pos) {
 
+	if( pos > tamfis && pos != UINT_MAX) {
+		throw invalid_argument("[insertar] posicion no valida");
+	}
 	if (tamfis==tamlog) {
 		tamfis=potenciaDeDos(tamfis);
 		aumentarTam();
-	}
-	if( pos > tamfis && pos != UINT_MAX) {
-		throw invalid_argument("[insertar] posicion no valida");
 	}
 	if (pos==UINT_MAX) {					//Insercion al final del vector
 		v[tamlog]=dato;
