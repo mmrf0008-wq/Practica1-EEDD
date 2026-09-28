@@ -132,5 +132,3 @@ void Especie::mostrarInfo() {
 	cout << "Tipo planta: " << this->tipoPlanta << endl;
 	cout << " -------------------------------" << endl;
 }
-
-

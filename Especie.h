@@ -5,6 +5,7 @@
 #ifndef ESPECIE_H
 #define ESPECIE_H
 #include <string>
+#include <VDinamico.h>
 
 using namespace std;
 
@@ -49,6 +50,8 @@ public:
 	Especie();
 
 	void mostrarInfo();
+
+
 
 };
 

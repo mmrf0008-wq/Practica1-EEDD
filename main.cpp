@@ -44,6 +44,31 @@ VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
     return vectorEspNComun;
 }
 
+/**
+ * Busca cuantas especies contienen una palabra especificada por parametro en la
+ * primera palabra de su nombre cientifico
+ * @param palabra cadena que se buscara en el nombre cientifico
+ * @return vector de punteros de las especies que cumplen la condicion
+ */
+VDinamico<Especie*> buscaPalabraNC(const string &palabra,  VDinamico<Especie> &especies) {
+	if(palabra.length() > 2) {
+		throw invalid_argument("[buscaPalabraNC] palabra no válida");
+	}
+	VDinamico<Especie*> encontrados;
+	string cadena;
+
+
+	for(int i =0; i < especies.getLogico(); i++ ) {
+		cadena = especies[i].get_nombre_cientifico();
+		size_t sub = cadena.find(" ");
+		if(cadena.substr(0, sub) == palabra) {
+			encontrados.insertar(&especies[i]);
+		}
+
+	}
+	return encontrados;
+}
+
 //Metodo Burbuja
 void metodoBurbuja(VDinamico<Especie> vEspecies) {
     if (vEspecies.getLogico()<=1) {
@@ -77,7 +102,7 @@ int main()
         }
 
 
-        //INSTANCIAR Y MOSTRAR EL VECTOR DE Especies
+        //PUNTO 2:         INSTANCIAR Y MOSTRAR EL VECTOR DE Especies.
         LectorCSV lector_csv;
         VDinamico<Especie> vectorCompleto;
         if (!lector_csv.cargar(vectorCompleto, RUTA_FICHERO_ESPECIES))
@@ -89,7 +114,7 @@ int main()
         }
         cout << "Vector leido de fichero"<<endl;;
 
-        //Mostrar los 50 primeros identificadores
+        //PUNTO 2 :         Mostrar los 50 primeros identificadores
         cout<<"==================================================="<<endl;
         cout << "Identificador de las primeras 50 especies:" << endl;
         for (int i = 0; i < 50; ++i)
@@ -101,6 +126,8 @@ int main()
         cout<<"==================================================="<<endl;
         vectorCompleto.ordenar();
 
+
+        //PUNTO 3 :  MOSTAR LOS PRIMEROS 50 ORDENADOS DE MENOR A MAYOR
         cout << "Vector ordenado. Mostrar las primeras 50 especies" << endl;
         for (int i = 0; i < 50; i++)
         {
@@ -108,7 +135,7 @@ int main()
             vectorCompleto[i].mostrarInfo();
         }
 
-        //Busqueda de posición de codigos de especies
+        //PUNTO 4:          Busqueda de posición de codigos de especies
         cout<<"==================================================="<<endl;
         Especie esp;
         cout << "Posición de códigos de especies: " << endl;
@@ -125,7 +152,7 @@ int main()
         pos = vectorCompleto.busquedaDicotomica(Especie("JAX", "","",""));
         cout << "   Posicion de JAX: " << pos << endl;
 
-        //Búsqueda de Nombre común no nulo
+        //PUNTO 5:          Búsqueda de Nombre común no nulo
         cout<<"==================================================="<<endl;
         cout << "Vector de especies con nombre comun no nulo" << endl;
         VDinamico<Especie*> vectorEspNComun = getEspNComun(vectorCompleto);
@@ -137,14 +164,19 @@ int main()
             vectorEspNComun[i]->mostrarInfo();
         }
 
-        //Ordenamiento mediante el metodo Burbuja
+        //PUNTO 6:          Ordenamiento mediante el metodo Burbuja
         metodoBurbuja(vectorCompleto);
+    	cout<<"==================================================="<<endl;
         cout << "Vector ordenado. Mostrando las primeras 50 especies en orden inverso" << endl;
         for (int i = 0; i < 50; i++)
         {
             cout<<to_string(i);
             vectorCompleto[i].mostrarInfo();
         }
+
+        //PUNTO 7:
+    	cout<<"==================================================="<<endl;
+    	cout << 
 
     }
     catch (const exception& e)
