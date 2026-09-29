@@ -54,7 +54,7 @@ VDinamico<Especie*> buscaPalabraNC(const string &palabra,  VDinamico<Especie> &e
 	if(palabra.length() < 1) {
 		throw invalid_argument("[buscaPalabraNC] palabra no válida");
 	}
-	VDinamico<Especie*> encontrados;
+	VDinamico<Especie*> encontrados; //hehe
 	string cadena;
 
 

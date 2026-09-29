@@ -318,7 +318,7 @@ void VDinamico<T>::aumentarTam() {
 	}
 	delete [] v;
 
-	v = nuevo;
+	v = nuevo; //aaaaa
 }
 
 
