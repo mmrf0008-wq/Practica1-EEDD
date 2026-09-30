@@ -116,7 +116,7 @@ private:
 };
 
 template<typename T>
-VDinamico<T>::VDinamico():tamfis(1),tamlog(0) {
+VDinamico<T>::VDinamico(): tamlog(0), tamfis(1) {
 	v = new T[tamfis];
 }
 
@@ -178,6 +178,7 @@ bool VDinamico<T>::esPotenciaDeDos(int num) {
 			return false;
 		}
 	}
+	return false;
 }
 
 template<typename T>
@@ -208,8 +209,8 @@ VDinamico<T> & VDinamico<T>::operator=(const VDinamico &arr) {
 
 
 template <typename T>
-T& VDinamico<T>::operator[](const int &i){
-	if( (i<0) || (i > tamfis) ){
+T& VDinamico<T>::operator[](const int &i){  //T& para permitir lectura y escritura
+	if( (i<0) || (i >= tamfis) ){
 		throw  invalid_argument("[operator[]]: se ha intentado acceder a una dirección no válida");
 	}
 	return v[i];
