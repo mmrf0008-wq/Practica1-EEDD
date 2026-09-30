@@ -5,8 +5,6 @@
 #include "Especie.h"
 #include "LectorCSV.h"
 #include <string>
-#include <iostream>
-#include <string>
 using namespace std;
 
 #if defined(_WIN32) || defined(_WIN64)
@@ -36,7 +34,7 @@ VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
     VDinamico<Especie*> vectorEspNComun;
 
     for (int i=0; i<vEspecies.getLogico();i++) {
-        if (vEspecies[i].get_nombre_comun() != "") {
+        if (!vEspecies[i].get_nombre_comun().empty()) {
             vectorEspNComun.insertar(&vEspecies[i]);
         }
     }
@@ -48,10 +46,11 @@ VDinamico<Especie*> getEspNComun(VDinamico<Especie>& vEspecies)
  * Busca cuantas especies contienen una palabra especificada por parametro en la
  * primera palabra de su nombre cientifico
  * @param palabra cadena que se buscara en el nombre cientifico
+ * @param especies vector dinamico de especies
  * @return vector de punteros de las especies que cumplen la condicion
  */
 VDinamico<Especie*> buscaPalabraNC(const string &palabra,  VDinamico<Especie> &especies) {
-	if(palabra.length() < 1) {
+	if(palabra.empty()) {
 		throw invalid_argument("[buscaPalabraNC] palabra no válida");
 	}
 	VDinamico<Especie*> encontrados; //hehe
@@ -75,7 +74,7 @@ void metodoBurbuja(VDinamico<Especie> &vEspecies) {
         throw length_error("[main.cpp::metodoBurbuja]: El vector no se puede ordenar");
     }
     Especie aux;
-    int n = vEspecies.getLogico();
+    const unsigned int n = vEspecies.getLogico();
 
     for (int i=0; i<n-1;i++) {
         for (int j=0; j < n - i - 1; j++) {
@@ -121,7 +120,7 @@ int main()
         cout << "Identificador de las primeras 50 especies:" << endl;
         for (int i = 0; i < 50; ++i)
         {
-            cout<<to_string(i)<<": "<<vectorCompleto[i].get_codigo_especie()<<endl;
+        	 cout<<to_string(i)<<": "<<vectorCompleto[i].get_codigo_especie()<<endl;
         }
 
         //Ordenación del vector
@@ -136,6 +135,7 @@ int main()
         {
             cout<<to_string(i);
             vectorCompleto[i].mostrarInfo();
+
         }
 
         //PUNTO 4:          Busqueda de posición de codigos de especies
@@ -171,17 +171,17 @@ int main()
         metodoBurbuja(vectorCompleto);
     	cout<<"==================================================="<<endl;
         cout << "Vector ordenado. Mostrando las primeras 50 especies en orden inverso" << endl;
-        for (int i = vectorCompleto.getLogico() - 1; i > vectorCompleto.getLogico() - 50; i--)
+        for (unsigned int i = vectorCompleto.getLogico() - 1; i > vectorCompleto.getLogico() - 50; i--)
         {
             cout<<to_string(i);
             vectorCompleto[i].mostrarInfo();
         }
 
         //PUNTO 7:
-    	VDinamico<Especie*> otroVectorEspecies;
+
     	string nombre = "Jasminum";
     	cout<<"==================================================="<<endl;
-    	otroVectorEspecies = buscaPalabraNC(nombre,vectorCompleto);
+    	VDinamico<Especie*> otroVectorEspecies  = buscaPalabraNC(nombre,vectorCompleto);
     	cout << "Especies con el nombre "<<nombre<<": "<<otroVectorEspecies.getLogico() << endl;;
     	for (int i = 0; i < otroVectorEspecies.getLogico(); i++)
     	{

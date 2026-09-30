@@ -63,7 +63,7 @@ public:
 	* @return objeto en posicion i
 	* @pre valor i debe ser intervalo [0-tamLog]
 	*/
-	T& operator[](const int &i);
+	T& operator[](const unsigned int &i);
 
 	/**
 	* @brief inserta un dato en la posicion establecida en parametro
@@ -209,7 +209,7 @@ VDinamico<T> & VDinamico<T>::operator=(const VDinamico &arr) {
 
 
 template <typename T>
-T& VDinamico<T>::operator[](const int &i){  //T& para permitir lectura y escritura
+T& VDinamico<T>::operator[](const unsigned int &i){  //T& para permitir lectura y escritura
 	if( (i<0) || (i >= tamfis) ){
 		throw  invalid_argument("[operator[]]: se ha intentado acceder a una dirección no válida");
 	}
