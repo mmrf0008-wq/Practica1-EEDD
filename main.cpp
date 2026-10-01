@@ -7,6 +7,11 @@
 #include <string>
 using namespace std;
 
+/**
+ ** @author Maitena María Rosa Fiedler mmrf0008@red.ujaen.es
+ *  @author Alberto Martínez Martín amm00530@red.ujaen.es
+ **/
+
 #if defined(_WIN32) || defined(_WIN64)
     #include <direct.h>
     #define GetCurrentDir _getcwd
