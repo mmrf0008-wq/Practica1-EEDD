@@ -8,13 +8,13 @@
 
 
 /**
- *	Obtiene el codigo de especie
+ *	@brief Obtiene el codigo de especie
  * @return codigo de especie
  */
 string Especie::get_codigo_especie() const { return this->codigoEspecie; }
 
 /**
- *	 establece el codigo de especie
+ *	@brief establece el codigo de especie
  * @param codigo_especie, cadena no nula
  */
 void Especie::set_codigo_especie(const string &codigo_especie) {
@@ -26,13 +26,13 @@ void Especie::set_codigo_especie(const string &codigo_especie) {
 }
 
 /**
- *	obtiene nombre comun de la especie
+ * @brief obtiene nombre comun de la especie
  * @return cadena
  */
 string Especie::get_nombre_comun() const {return this->nombreComun;}
 
 /**
- *	Establece el nombre comun de la especie
+ *	@brief el nombre comun de la especie
  * @param nombre_comun cadena no nula
  */
 void Especie::set_nombre_comun(const string &nombre_comun) {
@@ -43,13 +43,13 @@ void Especie::set_nombre_comun(const string &nombre_comun) {
 }
 
 /**
- * obtiene nombre cientifico
+ * @brief obtiene nombre cientifico
  * @return cadena
  */
 string Especie::get_nombre_cientifico() const {return this->nombreCientifico;}
 
 /**
- * establece nombre cientifico de la especie
+ * @brief establece nombre cientifico de la especie
  * @param nombre_cientifico cadena no nula
  */
 void Especie::set_nombre_cientifico(const string &nombre_cientifico) {
@@ -126,12 +126,22 @@ Especie::Especie(const string &cod, const string &nombreComun, const string &nom
 
 }
 
+/**
+ * @brief Constructor por defecto de la clase Especie.
+ * @details Inicializa los atributos de texto (código de especie, nombre científico
+ *          y nombre común) como cadenas vacías ("").
+ */
 Especie::Especie() {
 	this->codigoEspecie="";
 	this->nombreCientifico="";
 	this->nombreComun="";
 }
 
+/**
+ * @brief Muestra por consola la información detallada de la especie.
+ * Imprime en formato estructurado el código, nombre común,
+ *          nombre científico y tipo de planta asociados a la instancia actual.
+ */
 void Especie::mostrarInfo() {
 	cout << " -------------------------------" << endl;
 	cout << "Codigo especie: " << this->codigoEspecie << endl;
